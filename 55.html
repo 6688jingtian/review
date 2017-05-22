@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title id="tit1">实时查看滚动距离</title>
+	</head>
+	<body style="height: 2000px;">
+		<script>
+			var oTit1=document.getElementById('tit1');
+			window.onscroll=function()
+			{
+				var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+				oTit1.innerHTML=scrollTop;
+			};
+			//alert(window.navigator.userAgent);
+			//alert(window.location);
+		</script>
+	</body>
+</html>

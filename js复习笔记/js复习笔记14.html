@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<input type="text" id="txt1" />
+		<input type="submit" value="提交" id="sub" />
+		<script>
+			var oUl=document.getElementsByTagName('ul')[0];
+			oUl.firstElementChild.style.background='red';
+			var oSub=document.getElementById('sub');
+			var oTxt1=document.getElementById('txt1');
+			/*
+			if(oUl.firstChild)
+			{
+				
+			}
+			else
+			{
+				
+			}
+			*/
+			//利用DOM方式来操作元素属性
+			oSub.onclick=function()
+			{
+				oTxt1.setAttribute('value','dfdsf');
+			}
+			//元素属性操作一共有三种方式
+			//1. .style
+			//2. style['']任何点都可以用中括号加引号代替
+			//3.DOM方式 setAttribute() getAttribute() removeAttribute()
+		</script>
+	</body>
+</html>

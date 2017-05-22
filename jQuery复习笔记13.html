@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>查看修改删除</title>
+		<script src="js/jquery.js"></script>
+		<style>
+			#tab
+			{
+				width: 500px;
+				margin: 100px auto 10px;
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+			th
+			{
+				height: 20px;
+				width: 100px;
+				border: 1px solid black;
+				line-height: 20px;
+				text-align: center;
+			}
+			td
+			{
+				height: 20px;
+				width: 100px;
+				border: 1px solid black;
+				line-height: 20px;
+				text-align: center;
+			}
+			td a
+			{
+				color: red;
+			}
+			.box
+			{
+				height: 190px;
+				width: 400px;
+				border: 1px solid red;
+				margin: 0 auto;
+				display: none;
+				z-index: 3;
+				background: white;
+			}
+			.box p
+			{
+				height: 20px;
+				width: 400px;
+				border-bottom: 1px solid red;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<table id="tab">
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>月薪</th>
+				<th>职位</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>赵四</td>
+				<td>22</td>
+				<td>130000</td>
+				<td>百度开放云首席架构师</td>
+				<td><a href="javascript:;" class="res">查看</a>
+					<a href="javascript:;" class="del">删除</a>
+				</td>
+			</tr>
+			<tr>
+				<td>刘能</td>
+				<td>29</td>
+				<td>150000</td>
+				<td>淘宝网前端高级技术专家</td>
+				<td><a href="javascript:;" class="res">查看</a>
+					<a href="javascript:;" class="del">删除</a>
+				</td>
+			</tr>
+			<tr>
+				<td>刘英</td>
+				<td>23</td>
+				<td>3000</td>
+				<td>闪电署技术总监</td>
+				<td><a href="javascript:;" class="res">查看</a>
+					<a href="javascript:;" class="del">删除</a>
+				</td>
+			</tr>
+		</table>
+		<div class="box">
+			<p>姓名：<span></span></p>
+			<p>年龄：<span></span></p>
+			<p>月薪：<span></span></p>
+			<p>职位：<span></span></p>
+			<a href="javascript:;" class="close">关闭</a>
+		</div>
+		<script>
+			$('.res').click(function(){
+				var arr=[];
+				$(this).parent().siblings().each(function(){
+					arr.push($(this).text());
+				})
+				$('.box').show().children().each(function(i){
+					$(this).children('span').text(arr[i]);
+				});//默认参数i是要有的，API文档中已介绍,注意链式操作很重要
+				$('<div class="cover"></div>').appendTo($('body'));
+				$('div.cover').css({
+					'height':$(document).height(),
+					'width':$(document).width(),
+					'background':'black',
+					'opacity':0.6,
+					'position':'absolute',
+					'left':0,
+					'top':0,
+					'z-index':-1
+				});
+			});
+			$('.del').click(function(){
+				$(this).parent().parent().remove();
+			});
+			$('.close').click(function(){
+				$('.box').hide();
+				$('.cover').remove();//不要忘记用完将遮罩层删除
+			});
+		</script>
+	</body>
+</html>

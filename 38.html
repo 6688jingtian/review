@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件冒泡</title>
+		<style>
+			#div1{height: 200px; width: 200px; position: absolute; background: #ccc; display: none;}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn1" value="显示" />
+		<div id="div1">下拉框</div>
+		<script>
+			var oBtn1=document.getElementById('btn1');
+			var oDiv1=document.getElementById('div1');
+			oBtn1.onclick=function(ev)
+			{
+				var oEvent=ev||event;
+				oDiv1.style.display='block';
+				oEvent.cancelBubble=true;//取消事件冒泡
+			};
+			document.onclick=function()
+			{
+				oDiv1.style.display='none';
+			}
+		</script>
+	</body>
+</html>

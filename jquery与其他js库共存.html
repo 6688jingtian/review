@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jq与其他库共存</title>
+	</head>
+	<body>
+		<input type="text" value="aaaaa" id="a" />
+		<script src="js/prototype.js"></script>
+		<script src="js/jquery-3.2.1.js"></script>
+		<script>
+			var sowhat=jQuery.noConflict();//解除对$控制权，使jq与其他库共存
+			alert('这是prototype弹出的：'+$F('a'));
+			alert('这是jquery弹出的：'+sowhat('#a').val());
+		</script>
+	</body>
+</html>

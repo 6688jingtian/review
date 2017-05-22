@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js中的继承(二)</title>
+	</head>
+	<body>
+		<script>
+			 /*
+			   继承：
+			 1.儿子继承爸爸
+			 2.儿子可以用爸爸的方法和属性
+			 3.儿子的改变不影响爸爸
+			 */
+			//克隆构造函数
+			function Clone(obj) 
+			{
+			    for(var key in obj)
+			    {
+			    	if(typeof obj[key]=='object')
+			    	{
+			    		this[key]=Clone(obj[key])
+			    	}
+			    	else
+			    	{
+			    	    this[key]=obj[key];
+			    	}
+			    }
+			}; 
+			//构造函数==类
+			function Person(name,age,marry,sex)
+			{
+				this.name=name;
+				this.age=age;
+				this.marry=marry;
+				this.sex=sex;
+			};
+			Person.prototype.showName=function()
+			{
+				alert(this.name);
+			};
+			
+			//通过继承创造一个子类
+			function Personchild(pArr,weight)
+			{
+				Person.apply(this,pArr);
+				this.weight=weight;
+			};
+			//方法二:
+			function Fn(){};
+				Fn.prototype=Person.prototype;
+				Personchild.prototype=new Fn();
+				Personchild.prototype.showAge=function()
+				{
+					alert(this.age);
+				};
+			var oP=new Person('阿飞','27',false,1);
+			oP.showAge();
+			//alert(oP.marry);
+			//原型继承
+			
+			//方法一：
+			/*
+			Personchild.prototype=new Clone(Person.prototype);//两边都是对象，用赋值相当于引用，
+			//子类改变，父类会受影响
+			Personchild.prototype.showAge=function()
+			{
+				alert(this.age);
+			}
+			alert(Person.prototype.showAge);
+			//apply call都可以实现继承
+			*/
+		</script>
+	</body>
+</html>

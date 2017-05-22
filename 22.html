@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM高级应用</title>
+	</head>
+	<body>
+		姓名：<input type="text" id="txt1"/>
+		年龄：<input type="text" id="txt2"/>
+		<input type="button" id="btn1" value="增添" />
+		<table id="tab1" width="600px" border="1px">
+			<thead>
+				<td>ID</td>
+				<td>姓名</td>
+				<td>年龄</td>
+			</thead>
+			<tbody>
+				<tr>
+					<td>0</td>
+					<td>刘英</td>
+					<td>27</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>赵四</td>
+					<td>35</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>刘能</td>
+					<td>55</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>谢大脚</td>
+					<td>22</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>刘一水</td>
+					<td>39</td>
+				</tr>
+			</tbody>
+			<script>
+				var oTab1=document.getElementById('tab1');
+				var oBtn1=document.getElementById('btn1');
+				var oRows=oTab1.tBodies[0].rows;
+				var OldColor=null;
+				var oTd=document.createElement('td');
+				//alert(oTab1.tBodies[0].rows[2].cells[1].innerHTML);//简洁写法
+				//alert(oTab1.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[2].getEle
+				//mentsByTagName('td')[1].innerHTML);
+				for(var i=0;i<oRows.length;i++)
+				{
+					if(i%2==0)
+					{
+						oRows[i].style.background='#ccc';
+					}
+				}
+				for(var i=0;i<oRows.length;i++)
+				{
+					oRows[i].onmouseover=function()
+					{
+						OldColor=this.style.background;
+						this.style.background='yellow';
+					}
+					oRows[i].onmouseout=function()
+					{
+						this.style.background=OldColor;
+					}
+				}
+				oBtn1.onclick=function()
+				{
+					
+				}
+			</script>
+		</table>
+	</body>
+</html>

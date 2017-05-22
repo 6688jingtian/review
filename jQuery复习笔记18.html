@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表单事件</title>
+		<script src="js/jquery.js"></script>
+		<style>
+		</style>
+	</head>
+	<body>
+		<p>我是p标签</p>
+			<input type="submit" value="提交" />
+		<script>
+			//阻止浏览器默认行为
+			/*
+			$('input').click(function(e){
+				alert('开始喽！');
+				e.preventDefault();//阻止浏览器默认事件
+				e.stopPropagation();//阻止冒泡
+			});
+			*/
+			//事件绑定与事件移除
+			//$('p').bind('click',function(){
+				//$(this).css('background','yellow');
+			//})
+			//$('p').unbind('click');
+			$('input').one('click',function(){
+				alert('我哈哈哈');
+			})
+			//delegate应该用on去代替
+			//命名空间 
+			$('p').bind('click.background',function(){
+				$(this).css('background','yellow');
+			})
+			$('p').trigger('click');//只能传一个参数
+			//$('p').triggerHandler('click');//可阻止冒泡
+			var chuan={
+				
+			}
+		</script>
+	</body>
+</html>

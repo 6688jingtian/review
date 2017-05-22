@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>隔行变色</title>
+		<script src="js/jquery.js"></script>
+		<style>
+			ul li
+			{
+				list-style: none;
+				height: 25px;
+			}
+		</style>
+	</head>
+	<body>
+	    <input type="checkbox" name="gender[]" value="男"/>
+	    <input type="checkbox" name="gender[]" value="女"/>
+	    <input type="checkbox" name="gender[]" value="保密"/>
+	    <ul id="ul1">
+	    	<li></li>
+	    	<li></li>
+	    	<li></li>
+	    	<li></li>
+	    	<li></li>
+	    	<li></li>
+	    	<li></li>
+	    	<li></li>
+	    </ul>
+		<script>//特殊符号的处理
+		    /*
+			$('input[name=gender\\[\\]]').click(function(){
+				alert($(this).val());
+			});
+			*/
+			/*
+			$('input[type=\'checkbox\']').click(function(){
+				alert($(this).val());
+			});
+			*/
+			$('#ul1 li').filter(':even').css('background','greenyellow').end().filter(':odd')
+			.css('background','yellow');
+			//$('#ul1').find(':even').css('background','greenyellow')
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ajax(1)</title>
+		<script src="jquery.js"></script>
+		<style>
+			#box
+			{
+				height: 200px;
+				width: 200px;
+				border:1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="显示" />
+		<div id="box"></div>
+		<script>
+			$('input[type=button]').click(function(){
+				$('#box').load('a.html?date='+Math.random()+' #test1');
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<textarea cols="40" rows="10" id="text1"></textarea>
+		<input type="button" value="确定"  id="btn1"/>
+		<input type="button" value="走起"  id="btn2" onclick="window.location='http://www.guichuan666.cn/'"/>
+		<script>
+			var oText1=document.getElementById('text1');//window.location可赋值
+			var oBtn1=document.getElementById('btn1');
+			oBtn1.onclick=function()
+			{
+				var oOpen=window.open('about:blank','_blank');
+				oOpen.document.write(oText1.value);
+			}
+		</script>
+	</body>
+</html>

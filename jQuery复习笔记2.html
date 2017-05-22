@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.js"></script>
+		<style>
+			/*
+			div~p
+			{
+				background: red;
+			}
+			*/
+		</style>
+	</head>
+	<body>
+		<input type="button" value="111111"  id="btn1"/><br />
+		<div><a href="javascript:;">我哈哈哈哈</a></div>
+		<p><a href="javascript:;" id="p">我哈哈哈</a></p>
+		<p>这个是第二个p标签</p>
+		<p>这个是第三个p标签</p>
+		<script>
+			//jQuery.noConflict();//使jQuery与其他插件共存,释放$权限
+			//alert('这是：'+jQuery('#btn1').val());
+			//alert('这是：'+$F('btn1'));
+		    //$('div~p').css('background','red');
+		    $('div').nextAll().css('background','red');
+		    //层次选择器
+		    //节点+紧挨着的节点等价于(.next())
+		    //节点~节点 为选择全部剩余同类节点
+		    //jquery完美的容错机制，即使页面没有这个元素，也不会报错
+		    //var oP=document.getElementById('p');
+		    //oP.style.color='blueviolet';
+		    $('#p1').css('background','yellow');
+		</script>
+	</body>
+</html> 

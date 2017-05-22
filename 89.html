@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.js"></script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<input type="button" value="点我获取数据"/>
+		<div id="intro"></div>
+		<script>
+			$('input[type=button]').click(function(){
+				$.ajax({
+					type:"get",
+					url:"wo.txt",
+					success:function(data){
+						$('#intro').html(data);
+					}
+				});
+			})
+		</script>
+	</body>
+</html>

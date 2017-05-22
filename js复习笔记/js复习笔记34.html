@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>cookie基础</title>
+	</head>
+	<body>
+		<script>
+			/*
+			var oDate=new Date();//创建日期对象
+			oDate.setDate(oDate.getDate()+14);
+			//alert(oDate.getFullYear()+'-'+(oDate.getMonth()+1)+'-'+oDate.getDate())
+			document.cookie='username=blue;expires='+oDate;
+			*/
+			//人生路，莫慌张，心平气和不紧张，要自信
+			function setCookie(name,value,iDay)//封装设置cookie函数
+			{
+				var oDate=new Date();//创建日期对象
+				oDate.setDate(oDate.getDate()+iDay);
+				document.cookie=name+'='+value+';expires='+oDate; 
+			};
+			setCookie('user','bb',365);
+			setCookie('hi','aa',100);
+			//alert(document.cookie);
+			function getCookie(name)//获取cookie
+			{
+				var arr=document.cookie.split('; ');
+				for(var i=0;i<arr.length;i++)
+				{
+					var myArr=arr[i].split('=');
+				}
+				if(myArr[0]==name)
+				{
+					alert(myArr[1]);
+				}
+			}; 
+			getCookie('user');
+			//setCookie('user','bb',-1);//删除cookie -1即为前一天就该删除
+		</script>
+	</body>
+</html>

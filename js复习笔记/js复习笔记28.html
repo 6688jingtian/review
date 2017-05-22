@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>回车发布消息</title>
+	</head>
+	<body>
+		<input type="text" id="txt"/>
+		<textarea id="text"></textarea>
+		<script>
+			var oTxt=document.getElementById('txt');
+			var oText=document.getElementById('text');
+			oTxt.onkeydown=function(ev)
+			{
+				oEvent=ev||event;
+				if(oEvent.keyCode==13&&oEvent.ctrlKey)
+				{
+					oText.value+=oTxt.value+'\n';
+				}
+			}
+		</script>
+	</body>
+</html>

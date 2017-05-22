@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>demo1</title>
+		<script src="js/jquery-3.2.1.js"></script>
+	</head>
+	<body>
+		<p>1</p>
+		<p id="box">第二个2标签</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+		<script>
+			//$('p').filter('#box').css('background','red');//将元素的集合缩为
+			//$('p').eq(4).css('background','red');
+			//$('p').last().css('background','red');
+			/*
+			$('p').click(function(){
+				if($(this).is('#box'))
+				{$(this).css('background','red')}
+			});
+			*/
+			$('p').not('#box').css('background','red');
+		</script>
+	</body>
+</html>

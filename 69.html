@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>样式操作</title>
+		<style>
+			.a
+			{
+				background: red;
+			}
+			.b{
+				color: greenyellow;
+			}
+		</style>
+		<script src="js/jquery-3.2.1.js"></script>
+	</head>
+	<body>
+		<p>我是p标签</p>
+		<script>
+			//切换样式
+			$('p').click(function(){
+				$(this).toggleClass('a b');
+			})
+		</script>
+	</body>
+</html>

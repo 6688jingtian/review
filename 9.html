@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>时钟</title>
+		<style>
+			*{margin: 0;padding: 0;}
+			body{background: black; margin: 10 auto; font-size: 50px; color: white;}
+			#div1{height: 80px; width: 285px; margin: 80px auto;}
+			#div2{height: 80px; width: 285px; margin: 80px auto;}
+		</style>
+		<script>
+			function toDu(a)
+			{
+				if(a<10)
+				{
+					return '0'+a;
+				}
+				else
+				{
+					return a+'';
+				}
+			};
+			function imp1()
+			{
+				var str='';
+				var oDate=new Date();
+				var str=toDu(oDate.getFullYear())+toDu(oDate.getMonth()+1)+toDu(oDate.getDay());
+			};
+		    function imp2()
+			{
+				var str='';
+				var oDate=new Date();
+				var str=toDu(oDate.getHours())+toDu(oDate.getMinutes())+toDu(oDate.getSeconds());
+				var aImg=document.getElementsByTagName('img');
+				for(var i=0;i<aImg.length;i++)
+				{
+					aImg[i].src="img/"+str[i]+".png";
+				}
+			};
+			window.onload=function ()
+			{
+				imp2();
+				setInterval(function()
+				{imp2();},1000);
+			};	
+		</script>
+	</head>
+	<body>
+	   <div id="div2">
+	   <img src="img/0.png" />
+	   <img src="img/0.png" />
+	   :
+	   <img src="img/0.png" />
+	   <img src="img/0.png" />
+	   :
+	   <img src="img/0.png" />
+	   <img src="img/0.png" />
+	   </div>
+	</body>
+</html>

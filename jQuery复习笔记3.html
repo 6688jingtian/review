@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>过滤选择器</title>
+		<script src="js/jquery.js"></script>
+		<style>
+			*{margin: 0;padding: 0;}
+			#box
+			{
+				height: 100px;
+				width: 100px;
+				background: greenyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div title="js">我是div</div>
+		<div><p>我只有一个</p></div>
+		<p title="haha" mydingyi='dingyi'>我是p1</p>
+		<p mydingyi='wowowo'>我是p</p><!--可以自定义属性-->
+		<p title="o">woshi1</p>
+		<div id="box">
+			<p>1</p>
+		</div>
+		<input type="text" value="我是文本框" disabled="disabled" />
+		<input type="password"  value="我是密码框"/>
+		<input type="radio" value="我是单选按钮"/>
+		<input type="checkbox" value="a" checked="checked"/>
+		<input type="checkbox" value="b"/>
+		<input type="checkbox" value="c"/>
+		<input type="reset" value="我是重置按钮"/>
+		<textarea cols="10" rows="10"></textarea>
+		<select>
+			<option value="11111">11111</option>
+			<option value="22222" selected="selected">22222</option>
+			<option value="33333">33333</option>
+		</select>
+		<script>
+			//$('#box').animate({'height':'500px'},1000);
+			//$('div:animated').css('background','blueviolet');
+			//$('p[mydingyi=wowowo]').css('background','red');
+			//$('p[title][mydingyi=dingyi]').css('background','yellow');
+			//$('p:nth-child(2n)').css('background','red');//jquery严格按照css规范，索引从1开始
+		alert($(':input').length); 
+		</script>
+	</body>
+</html>

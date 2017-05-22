@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件补遗</title>
+		<script src="js/jquery-3.2.1.js"></script>
+	</head>
+	<body>
+			<p>来吧</p>
+		<script>
+			$('body').on('click',function(){
+            	$(this).append('<p>开始</p>');
+            	alert('成功了');//on()事件成功
+	        });  
+			//元素超多的时候要用事件代理
+			/*
+            $('a').click(function(){
+            	alert('我被点击了'); 
+            });
+            */
+			/*
+			$('p').hover(function(){
+				$(this).css('background','yellowgreen')
+			},function(){$(this).css('background','none')});
+			*/
+			//模拟事件发生，trigger
+		</script>
+	</body> 
+</html>

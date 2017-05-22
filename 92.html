@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.js"></script>
+	</head>
+	<body>
+		<input type="button" value="显示数据"/>
+		<div id="intro" style="color: red;"></div>
+		<span style="color: red;"></span>
+		<script>
+			$('input[type=button]').click(function(){
+				$.ajax({
+					url:'wowo.php?'+Math.random(),
+					type:'get',
+					timeout:1000,
+					success:function(data){
+						alert(data);
+					},
+					error:function(jqXHR,textStatus,errorThrown){
+						if(errorThrown=='Not Found')
+		                {
+							$('#intro').html('你请求的地址不存在');
+						}
+						if(textStatus=='timeout')
+						{
+							$('#intro').html('请求超时，请刷新页面重新操作');
+						}
+					}
+				});	
+			});
+			$(document).ajaxError(function(){
+					$('#intro').html('ajax请求发生错误');
+			})
+		</script>
+	</body>
+</html>

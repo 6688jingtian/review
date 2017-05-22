@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul></ul>
+		<script>
+			//文档碎片，为提高性能，现已淘汰
+			var oUl=document.getElementsByTagName('ul')[0];
+			var oFra=document.createDocumentFragment();
+			for(var i=0;i<10000;i++)
+			{
+				var oLi=document.createElement('li');
+				oFra.appendChild(oLi);
+			}
+			oUl.appendChild(oFra);
+		</script>
+	</body>
+</html>

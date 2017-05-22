@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery普通事件</title>
+		<script src="js/jquery.js"></script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+			<input type="text" value="123456"/>
+			<input type="button" value="按钮" /><br />
+			<span style="display: none;">获取了焦点</span>
+		<script>
+			//dblclick()双击事件
+			/*
+			$('input').focus(function(){//获取焦点事件,只要是后代就行
+				$('span').show();
+			});
+			$('input').blur(function(){
+				$('span').hide();
+			});
+			*/
+			//focusin和focus区别为前者支持事件冒泡后者不支持
+			//当focus值改变并且触发blur时候才算完成一次change()事件
+			$('input').change(function(){
+				$('span').show();
+			});
+			$('input').select(function(){
+				$('span').show();
+			});
+			//select事件和change()事件相近
+			//submit()事件很一般
+			//浏览器事件   $(window).resize()事件和 scroll()事件
+		</script>
+	</body>
+</html>

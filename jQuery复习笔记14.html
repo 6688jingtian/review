@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>滚动公告</title>
+		<script src="js/jquery.js"></script>
+		<style>
+			*{margin: 0; padding: 0;}
+			#box
+			{
+				height: 140px;
+				width: 120px;
+				margin: 50px auto;
+				border: 1px solid black;
+				position: relative;
+				overflow: hidden;
+			}
+			div ul
+			{
+				height: 220px;
+				width: 120px;
+				position: absolute;
+				animation: 1s;
+			}
+			div ul li
+			{
+				height: 20px;
+				line-height: 20px;
+				text-align: center;
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>薛之谦火了</li>
+				<li>周杰伦火了</li>
+				<li>陈奕迅火了</li>
+				<li>张学友火了</li>
+				<li>于贵川火了</li>
+				<li>许嵩火了</li>
+				<li>赵四火了</li>
+				<li>谢广坤火了</li>
+				<li>谢飞机火了</li>
+				<li>王大拿火了</li>
+			</ul>
+		</div>
+		<script>
+			//明显不自然
+			/*
+			$(function(){
+				setInterval(function(){
+		    	$('#box ul li').first().insertAfter($('ul li').last());
+		    	$('ul').css('top','20px');
+		    	$('ul').animate({'top':0},600);
+		        },1000); 
+			});
+			*/
+			setInterval(function(){
+				$('#box ul').animate({'top':'-20px'},600,function(){
+					$(this).append($('#box ul li:first'));
+					$(this).css('top',0);
+				});
+			},1000);
+		</script> 
+	</body>
+</html>

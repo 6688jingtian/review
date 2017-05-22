@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		</style>
+	</head>
+	<body>
+		<script>
+			var arr=new Array(1,2,3);
+			arr.push(4);
+			arr.shift();
+			arr.unshift(10);
+			//splice(n1,n2)n1为起点，n2为长度
+			//arr.splice(1,2);还可插入，起点，长度0，添加的元素
+			//arr.length=2;//数组length存在这个小bug
+			//arr.splice(2,2,'a','b');//替换
+			//arr.splice(2,0,'a','b');//添加
+			//splice主要针对行中间
+			alert(arr);
+			//push数组尾部添加 pop数组尾部删除
+			//shift unshift在数组头部添加或删除
+			
+			//数组连接
+			var a=[1,2,3];
+			var b=[4,5,6];
+			var c=a.concat(b);
+			alert(c);
+			var d=a.join('-p-');//分隔符
+			alert(d);
+			
+		</script>
+	</body>
+</html>

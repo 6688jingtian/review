@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动画算法插件</title>
+		<script src="js/jquery-3.2.1.js"></script>
+		<script src="js/easing.js"></script>
+		<style>
+			*{margin: 0;padding: 0;}
+			#box
+			{
+				height: 100px;
+				width: 100px;
+				background: greenyellow;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="点击" />
+		<div id="box"></div>
+		<script>
+			$('input').click(function(){
+				$('#box').animate({'left':'500px'},1000,'easeOutBounce');
+			})
+		</script>
+	</body>
+</html>

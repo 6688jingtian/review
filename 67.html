@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>tab标签页(jquery写法)</title>
+		<style>
+			*{margin: 0;padding: 0;}
+			#intro ul li
+			{
+				list-style: none;
+				float: left;
+				margin-right: 4px;
+				font-size: 15px;
+			}
+			#box
+			{
+				height: 200px;
+				width: 220px;
+				margin: 20px auto;
+				border: 1px solid black;
+			}
+			#intro
+			{
+				height: 24px;
+				width: 170px;
+				margin: 10px auto;
+			}
+			#content
+			{
+				height: 120px;
+				width: 170px;
+				margin: 5px auto;
+				border: 1px solid black;
+			}
+			#content div
+			{
+				display: none;
+			}
+			#intro ul li
+			{
+				height: 20px;
+				width: 50px;
+				cursor: pointer;
+				border: 1px solid black;
+				text-align: center;
+			}
+			#intro ul li.current
+			{
+				background: greenyellow;
+			}
+		</style>
+		<script src="js/jquery-3.2.1.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="intro">
+			<ul id="ul">
+				<li class="current">php</li>
+				<li>ruby</li>
+				<li>python</li>
+		    </ul>
+			</div>
+			<div id="content">
+				<div style="display: block;">介绍.....php</div>
+				<div>介绍.....ruby</div>
+				<div>介绍.....python</div>
+			</div>
+		</div>
+		<script>
+		    $('#intro ul li').mouseover(function(){
+		    	//$(this).addClass('current').siblings().removeClass('current');
+		    	//$('#content div').eq($(this).index()).show().siblings().hide();
+		    	$(this).addClass('current').siblings().removeClass('current').parent().parent().next().find('div').eq($(this).index()).show().siblings().hide();
+		    });
+		</script>
+	</body>
+</html>

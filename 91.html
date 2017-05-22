@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.js"></script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<input type="button" value="获取新闻列表" id="btn" />
+		<div id="box">
+			<ul></ul>
+		</div>
+		<script>
+			$('#btn').click(function(){
+				var ul=$('#box>ul');
+				$.ajax({
+					url:'wode.php',
+					type:'get',
+					dataType:'xml',
+					success:function(xml){
+						$(xml).find('title').each(function(){
+							ul.append('<li>'+$(this).text()+'</li>')
+						})
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

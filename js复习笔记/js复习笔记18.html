@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>隔行变色</title>
+		<style>
+			*{margin: 0;padding: 0;}
+			div
+			{
+				width: 387px;
+				margin: 20px auto;
+			}
+			table
+			{
+				text-align: center;
+				margin: 0 auto;
+			}
+			th
+			{
+				width: 100px;
+				line-height: 20px;
+				height: 20px;
+			}
+			td
+			{
+				width: 100px;
+				line-height: 20px;
+				height: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="text" id="txt1"/>
+			<input type="text" id="txt2"/>
+			<input type="submit" value="添加" id="sub"/>
+		</div>
+		<table border="1" id="tab1">
+			<thead>
+				<th>ID</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th></th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>赵四</td>
+					<td>22</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>刘能</td>
+					<td>27</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>大脚</td>
+					<td>55</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>王五</td>
+					<td>35</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>小六</td>
+					<td>33</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		<script>
+			//因为早期表格用的比较多，所以设计了一些简便方式
+			//tbodies[],rows[],cells[],一个表格可以有多个tbodies   tfoot,thead都没有数组
+			var oTab1=document.getElementById('tab1');
+			var oTxt1=document.getElementById('txt1');
+			var oTxt2=document.getElementById('txt2');
+			//var oDel=document.getElementById();
+			var tab=6;
+			//添加新行
+			var oSub=document.getElementById('sub');
+			oSub.onclick=function()
+			{
+				var oTr=document.createElement('tr');
+				/*
+				var oTd=document.createElement('td');
+				oTd.innerHTML=tab;
+				oTr.appendChild(oTd);
+				
+				var oTd=document.createElement('td');
+				oTd.innerHTML=oTxt1.value;
+				oTr.appendChild(oTd);
+				
+				var oTd=document.createElement('td');
+				oTd.innerHTML=oTxt2.value;
+				oTr.appendChild(oTd);
+				
+				var oTd=document.createElement('td');
+				oTd.innerHTML='<a href="javascript:;">删除</a>';
+				oTr.appendChild(oTd);
+				*/
+				oTr.innerHTML='<td>'+tab+'</td><td>'+oTxt1.value+'</td><td>'+oTxt2.value+'</td><td><a href=\'javascript:;\'>删除</a></td>';
+				tab++; 	 
+				oTab1.tBodies[0].appendChild(oTr);
+				oTr.getElementsByTagName('a')[0].onclick=function()
+				{ 
+					oTab1.tBodies[0].removeChild(this.parentNode.parentNode);
+				};  
+			};    
+			//alert(oTab1.tBodies[0].rows[1].cells[1].innerHTML);
+			 
+			var oldColor=null;
+			for(var i=0;i<oTab1.tBodies[0].rows.length;i++)
+			{
+				oTab1.tBodies[0].rows[i].onmouseover=function()
+				{
+					oldColor=this.style.background;
+					this.style.background='green';
+				};
+				oTab1.tBodies[0].rows[i].onmouseout=function()
+				{
+					this.style.background=oldColor;
+				};
+				if(i%2)
+				{
+					oTab1.tBodies[0].rows[i].style.background='#ccc';
+				}
+				else
+				{
+					oTab1.tBodies[0].rows[i].style.background='';
+				}
+			}
+			//alert(oTab1.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[1].getElementsByTagName('td')[1].innerHTML);
+			//alert(oTab1.tBodies[0].rows[1].cells[1].innerHTML);
+		</script>
+	</body>
+</html>

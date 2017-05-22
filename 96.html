@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>tab标签页</title>
+		<script src="js/jquery.js"></script>
+		<script src="jquery.tab.1.0.js"></script>
+		<style>
+			*{margin: 0;padding: 0;}
+			#box
+			{
+				 margin: 100px auto;
+			}
+			#box1
+			{
+				margin:0 auto;
+				height: 30px;
+				width: 300px;
+			}
+			#box1 li.current
+			{
+				background: greenyellow;
+			}
+			#box1 li
+			{
+				float: left;
+				list-style: none;
+				text-align: center;
+				width: 32.6%;
+				height: 28px;
+				line-height: 28px;
+				text-align: center;
+				border: 1px solid black;
+				border-bottom: none;
+				cursor: pointer;
+			}
+			#box2
+			{
+				height: 100px;
+				width: 297px;
+				margin: 0 auto;
+				border: 1px solid black;
+			}
+			#box2 div
+			{
+				float: left;
+				list-style: none;
+				text-align: center;
+				width: 33.3%;
+				height: 30px;
+				text-align: center;
+				display: none;
+			}
+			#box2 div.dis
+			{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="box1">
+				<li class="current">html</li>
+				<li>css</li>
+				<li>javascript</li>
+			</div>
+			<div id="box2">
+				<div style="display: block;">解释html</div>
+				<div>解释css</div>
+				<div>解释js</div>
+			</div>
+	   </div>
+	   <script>
+	   	$('#box').tab(
+	   		{
+	   			eventType:'click'
+	   		}
+	   	).find('#box1 li').css('background','blueviolet');
+	   </script>
+	</body>
+</html>

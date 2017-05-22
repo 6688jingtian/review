@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>实现隐藏</title>
+	</head>
+	<body>
+		<li>刘能<a href="#">隐藏</a></li>
+		<li>赵四<a href="#">隐藏</a></li>
+		<li>玉田<a href="#">隐藏</a></li>
+		<li>谢广坤<a href="#">隐藏</a></li>
+		<li>香秀<a href="#">隐藏</a></li>
+		<script>
+			var aA=document.getElementsByTagName('a');
+			for(var i=0;i<aA.length;i++)
+			{
+				aA[i].onclick=function()
+				{
+					this.parentNode.style.display='none';//用this是因为匿名函数内无法找到x[i]
+				}
+			}
+		</script>
+	</body>
+</html>

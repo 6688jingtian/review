@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>完美运动框架</title>
+	</head>
+	<body>
+		<script>
+			function getstyle(obj,name)
+			{
+				if(obj.currentStyle)
+				{
+				return obj.currentStyle;
+				}
+				else
+				{
+				return getComputedStyle(obj,false)[name];
+				}
+			}
+			function move(obj,json,fnEnd)//可用于链式运动，即分阶段的运动
+			{
+                clearInterval(obj.timer);
+				obj.timer=setInterval(function()
+				{
+				  var bBox=true;//假设所有值都已经到了
+				  for(var strr in json)
+				  {
+					  if(strr=='opacity')
+					  {
+					    var cur=Math.round(parseFloat(getstyle(obj,strr))*100);
+					  }
+					  else
+					  {
+					    var cur=parseInt(getstyle(obj,strr));
+					  }
+					  var speed=(json[strr]-cur)/10;
+					  speed=speed>0?Math.ceil(speed):Math.floor(speed);
+					  
+					  if(cur!=json[strr])
+					  bBox=false;
+					  if(strr=='opacity')
+			          {
+			            obj.style.filter='alpha(opacity:'+(cur+speed+')');
+			            obj.style.opacity=(cur+speed)/100;
+			          }
+					  else
+					  {
+					    obj.style[strr]=cur+speed+'px';
+					  }
+				  }
+				  if(bBox)
+				  {
+					  clearInterval(obj.timer);
+					  if(fnEnd)fnEnd();
+				  }
+				},30);
+			};
+        </script>
+	</body> 
+</html>

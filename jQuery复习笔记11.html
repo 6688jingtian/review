@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.js"></script>
+		<style>
+			*{margin: 0;padding: 0;}
+			.a
+			{
+				background: yellow;
+			}
+			.b
+			{
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="a b" title="wowo">我是周杰伦</p>
+		<script>
+			//$('p').attr('class','a');
+			//$('p').removeAttr('class');//操作DOM节点属性
+			//非常适用于链式操作
+			//样式操作，切换样式
+			/*
+			$('p').click(function(){
+				$(this).toggleClass('a b')
+			})
+			*/
+			$('p').css({
+				'background':'blue',
+				'color':'green',
+				'border':'10px solid #ccc',
+				'padding':'10px',
+				'margin':'10px'
+			});
+			console.log('这是inner:'+$('p').innerHeight()+' '+'这是outer:'+$('p').outerHeight(true)); 
+			//css添加可用Json形式添加行间样式 
+			//innerHeight()和那个严格和名字相符
+			//position()相对父元素的距离  offset()相对于文档document的距离
+			alert($('p').position().left);
+			alert($('p').offset().left);
+			
+		</script>
+	</body>
+</html>

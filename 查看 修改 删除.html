@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>查看 修改 删除</title>
+		<style>
+			table
+			{
+				width: 400px;
+				border: 1px solid black;
+				margin: 50px auto;
+				border-collapse: collapse;
+			}
+			th
+			{
+				border: 1px solid black;
+			}
+			td
+			{
+				border: 1px solid black;
+				text-align: center;
+			}
+			a
+			{
+			    margin-right:10px ;	
+			    color: red;
+			}
+			#box
+			{
+				display: none;
+				z-index: 4;
+				position: relative;
+			}
+			ul
+			{
+				border: 1px solid red;
+				height: 110px;
+				width: 300px;
+				margin: 20px auto;
+				background: white;
+			}
+			li
+			{
+				list-style: none;
+				border-bottom: 1px solid red;
+				height: 25px;
+				line-height: 25px;
+			}
+		</style>
+		<script src="js/jquery-3.2.1.js"></script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>职位</th>
+				<th>姓名</th>
+				<th>薪资</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>前端高级技术专家</td>
+				<td>赵四</td>
+				<td>50000</td>
+				<td><a class="show" href="javascript:;">查看</a><a href="javascript:;">修改</a><a class="del" href="javascript:;">删除</a></td>
+			</tr>
+			<tr>
+				<td>百度首席架构师</td>
+				<td>玉田</td>
+				<td>70000</td>
+				<td><a class="show" href="javascript:;">查看</a><a href="javascript:;">修改</a><a class="del" href="javascript:;">删除</a></td>
+			</tr>
+			<tr>
+				<td>前端工程师</td>
+				<td>刘英</td>
+				<td>12000</td>
+				<td><a class="show" href="javascript:;">查看</a><a href="javascript:;">修改</a><a class="del" href="javascript:;">删除</a></td>
+			</tr>
+		</table>
+		<div id="box">
+			<ul>
+				<li>职位: <span></span></li>
+				<li>姓名: <span></span></li>
+				<li>薪资: <span></span></li>
+				<li><a href="javascript:;">关闭</a></li>
+			</ul>
+		</div>
+		<script>
+			$('.show').click(function(){
+				var arr=[];
+				var oHeight=$(document).height(); 
+			    var oWidth=$(document).width();
+				$(this).parent().siblings().each(function(){
+					arr.push($(this).text());
+				}); 
+				$('#box ul li').each(function(i)
+				{
+					$(this).children('span').text(arr[i]);
+				})
+				$('#box').show();
+				$('<div id="book"></div>').appendTo('body');
+				$('#book').css({//json格式创建多个属性，添加一个遮罩层
+					'position':'absolute',
+					'left':0,
+					'top':0,
+					'background':'black',
+					'opacity':0.6,
+					'height':oHeight,
+					'width':oWidth,  
+					'z-index':1
+				}); 
+			});
+			$('#box ul li a').click(function(){
+				$('#box').hide();
+				$('#book').remove();
+			});
+			$('.del').click(function(){
+				$(this).parent().parent().remove();
+			})
+		</script>
+	</body>
+</html>

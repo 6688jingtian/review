@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件绑定</title>
+	</head>
+	<body>
+		<input type="submit" value="提交" id="sub"/>
+		<script>
+			var oSub=document.getElementById('sub');
+			oSub.addEventListener('click',function(){
+				alert('a');
+			},false);
+			oSub.addEventListener('click',function(){
+				alert('b');
+			},false);
+		</script>
+	</body>
+</html>

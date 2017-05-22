@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<script>
+			//nodeType 1为元素节点,3为文本节点;
+			var aUl=document.getElementsByTagName('ul')[0];
+			for(var i=0;i<aUl.children.length;i++)
+			{
+				aUl.children[i].style.background='red';
+			}
+		</script>
+	</body>
+</html>

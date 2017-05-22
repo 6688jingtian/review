@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM筛选</title>
+		<script src="js/jquery.js"></script>
+	</head>
+	<body>
+		<p id="box">1</p>
+		<p>2</p>
+		<p class="hahaha">3</p>
+		<p myha='oo'>4</p>
+		<p>5</p>
+		<p>6</p>
+		<input type="text" value='11111'/>
+		<input type="text" value='22222'/>
+		<input type="text" value='33333'/>
+		<input type="text" value='44444'/>
+		<input type="text" value='55555'/>
+		<div></div>
+		<script>
+			//选择器是选择DOM，筛选对DOM进行操作，用于链式操作
+			/*
+			$('p').filter(':last').css('background','red');
+			$('p').filter('#box').css('background','yellow');
+			$('p[myha=oo]').css('background','blueviolet');//属性选择器
+			
+			$('p').click(function(){
+				if($(this).is('.hahaha'))
+				{
+					$(this).css('background','burlywood');
+				}
+			})
+			*/
+			var arr=$(':input').map(function(){//map作用是将一组元素转换为其他数组
+				alert($(this).val());
+			});
+			//split是获取数组的
+			//alert(arr);
+			//$('div').html(arr);
+			//$('input').slice(-2,-1).css('background','yellow');
+		</script>
+	</body>
+</html>

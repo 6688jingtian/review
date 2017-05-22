@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#ul1{background: yellow;}
+			#ul2{background: green;}
+		</style>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li>2</li>
+			<li>1</li>
+			<li>4</li>
+			<li>3</li>
+		</ul>
+		<input type="button" id="btn1" value="排序" />
+		<script>
+			var oUl1=document.getElementById('ul1');
+			var oBtn1=document.getElementById('btn1');
+			var aLi=oUl1.getElementsByTagName('li');
+			oBtn1.onclick=function()
+			{  
+				var arr=[];
+				for(var i=0;i<aLi.length;i++)
+				{
+					arr.push(aLi[i]);
+				}
+				arr.sort(function(n1,n2){
+					return parseInt(n1.innerHTML)-parseInt(n2.innerHTML);
+				});
+				for(var i=0;i<arr.length;i++)
+				{
+					oUl1.appendChild(arr[i]);
+				}
+			};
+		</script>
+	</body>
+</html>

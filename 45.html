@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件绑定</title>
+	</head>
+	<body>
+		<input type="button" value="确定" id="btn1" />
+		<script>
+			var oBtn1=document.getElementById('btn1');//在同一事物上添加多个事件
+			if(oBtn1.attachEvent)//兼容ie
+			{
+				oBtn1.attachEvent('onclick',function(){
+				alert('a');
+				});
+				oBtn1.attachEvent('onclick',function(){
+					alert('b');
+				});
+			}
+			else
+			{
+				oBtn1.addEventListener('click',function()
+				{
+					alert('a');
+				},false);
+				oBtn1.addEventListener('click',function()
+				{
+					alert('b');
+				},false);
+			}
+		</script>
+	</body>
+</html>

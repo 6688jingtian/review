@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery表单事件</title>
+		<script src="js/jquery.js"></script>
+		<style>
+		</style>
+	</head>
+	<body>
+		<input type="text"/>
+		<script>//表单元素用val()
+			$(document).mousemove(function(e){
+				var X=e.pageX;
+				var Y=e.pageY;
+				$('input').val(X+','+Y);
+			});
+			//主要讲鼠标事件，键盘事件
+			//keydown和keypress区别为一直按时，前者只触发一次，而后者触发无数次，不一定准不准
+			//input标签几乎全都有focus事件 
+		</script>
+	</body>
+</html>

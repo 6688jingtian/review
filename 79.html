@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery表单选择框</title>
+		<script src="js/jquery.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<input type="checkbox" checked="checked"/>吃：
+			<input type="checkbox" />喝：
+			<input type="checkbox" />玩：
+			<input type="checkbox" />乐：
+		</div>
+		<div id="btn">
+			<input type="button" value="全选" id='all'/>
+			<input type="button" value="全不选" id='no'/>
+			<input type="button" value="反选" id='back'/>
+		</div>
+		<script>
+			$('#all').click(function(){
+				$('#box input').attr('checked',true);
+			})
+			$('#no').click(function(){
+				$('#box input').attr('checked',false);
+			})
+			$('#back').click(function(){
+				$('#box input').each(function(){
+					$(this).attr('checked',!$(this).attr('checked'));
+				})
+				//$('#box input').attr('checked',!$(this).attr('checked'));
+				//不行，因为没有遍历所有
+			})
+		</script>	
+	</body>
+</html>

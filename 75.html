@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.2.1.js"></script>
+		<style>
+			p
+			{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="提交" />
+		<p>哈哈哈</p>
+		<script>
+			/*
+			$('button').click(function(){
+				$('p').show('slow');
+			})
+			*/
+			//$('button').click(function(){
+				//$('p').toggle(500);
+			//})
+			/*
+			$('input').click(function(){//代替toggle函数
+				if($('p').is(':visible'))
+				{
+					$('p').fadeOut(1000);
+				}
+				else
+				{//回调函数
+					$('p').fadeTo(1000,.8,function(){alert('我来也')});
+				}
+			})
+			*/
+			//$('input').click(function(){
+				//$('p').fadeToggle('slow');
+			//})
+			$('input').click(function(){
+				$('p').fadeIn().delay(1000).slideUp('slow');
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选择器的优化</title>
+		<script src="js/jquery.js"></script>
+	</head>
+	<body>
+	    <p>我是第一个p标签</p>
+	    <p>我是第二个p标签</p>
+	    <a href="javascript:;">点我</a>
+		<script>
+			//id选择器是最快的，标签越具体越好，减少浪费时间
+			//map返回一个对象，join方法返回string
+			//创建节点(1.用$,2.用字符串)
+			/*
+			$('body').append($('<div>我是div标签</div>'));
+			$('body').append('<p>变成蜡烛燃烧自己</p>');
+			*/
+			//插入节点
+			//$('p').prepend($('<em>我来也</em>'))//从前面插
+			//$('<p>appendTo</p>').appendTo($('p'));
+			//内部插入append appendTo prepend prependTo
+			//外部插入after insertAfter before insertBefore
+			//$('<div>我是div</div>').insertAfter($('p'));
+			//元素包裹wrap将元素分别包裹    wrapAll将元素全部包裹在一起
+			//wrapInner 包裹在元素里面
+			//$('p').wrapInner('<div>2333</div>');
+		    //删除节点
+		    //remove()删除节点 empty()清空节点 unwrap()删除元素的父元素 detach()效果和remove()效果一样
+		    /*
+		    $('body').append($('a').clone(true));//true参数使事件都加上了
+		    $('a').click(function(){
+		    	alert('哈哈哈');
+		    })
+		    */
+		   //$('p').replaceWith('哈哈哈');)
+		</script>
+	</body>
+</html>

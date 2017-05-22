@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.js"></script>
+		<style>
+			div{color: red;}
+		</style>
+	</head>
+	<body>
+		<input type="text"  name="username" id="username"/>
+		<input type="button" value="检查" />
+		<div></div>
+		<script>
+			$('input[type=button]').click(function(){
+				var send={'username':$('#username').val()}
+				$('div').load('process.php',send,function(data){//改变div文本
+					alert(data);
+				});
+			});
+		</script>
+	</body>
+</html>

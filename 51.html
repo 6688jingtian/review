@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ajax（get数据阻止缓存）</title>
+		<script src="ajax.js"></script>
+	</head>
+	<input type="button" id="btn1" value="显示" />
+	<ul id="ul1"></ul>
+	<body>
+	<script>
+		var oBtn1=document.getElementById('btn1');
+		var oUl1=document.getElementById('ul1');
+		oBtn1.onclick=function()
+		{
+			ajax(
+					'aaa.txt?t='+new Date().getTime(),
+				    function(str)
+				    {
+				    	var a=eval(str);//eval转换String
+				        for(var i=0;i<a.length;i++)
+						{
+							var oLi=document.createElement('li');
+							oLi.innerHTML='username:'+a[i].u+' password:'+a[i].p;
+							oUl1.appendChild(oLi);
+						}
+				    },function(){alert("失败");}
+		      );
+		};
+	</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.js"></script>
+	</head>
+	<body>
+		<input type="button" value="获取信息" />
+		<div id='info'></div>
+		<script>
+			$('input[type=button]').click(function(){
+				$.ajax({
+				url:'wo.php',
+				type:'get', 
+				success:function(data){
+					//alert(data);
+					$('#info').html(data);
+				}
+			    })
+			})
+		</script>
+	</body>
+</html>

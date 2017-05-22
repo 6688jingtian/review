@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="ajax.js"></script>
+	</head>
+	<body>
+		<ul id="ul"></ul>
+		<script>
+			window.onload=function()
+			{
+				var oUl=document.getElementById('ul');
+				ajax('json数组.txt',function(str){
+					var oStr=eval(str);
+					for(var i=0;i<oStr.length;i++)
+					{
+						var oLi=document.createElement('li');
+						oLi.innerHTML='用户名：'+oStr[i].user+' 密码：'+oStr[i].pass;
+						oUl.appendChild(oLi);
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

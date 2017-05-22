@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>内存泄漏</title>
+		<style>
+			#box
+			{
+				height: 100px;
+				width: 100px;
+				background: greenyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script>
+			var oDiv=document.getElementById('box');
+			oDiv.onclick=function()
+			{
+				alert(this.id);
+			};
+			//多使用this,用oDiv代替也行，但是无法进行垃圾回收，用this可以进行垃圾回收，
+			//节省内存空间,当空间占用太多就会造成内存泄漏
+		</script>
+	</body>
+</html>

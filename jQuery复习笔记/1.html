@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery过滤选择器</title>
+		<script src="js/jquery-3.2.1.js"></script>
+		<style>
+			*{margin: 0;padding: 0;}
+			div>a
+			{
+				color: yellow;
+			}
+			#txt
+			{
+				margin: 20px;
+				border: 1px green solid;
+			}
+			#box
+			{
+				height: 50px;
+				width: 50px;
+				background: pink;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="txt" />
+		<div>
+			<a>啊哈哈</a>
+			<p><a>lao</a></p>
+			<p>aaa</p>
+			<p class="a">bbbi</p>
+			<p>sdfs</p>
+			<h1>我是</h1>
+			<h2>周杰伦</h2>
+			<h3>大家好</h3>
+			<p></p>
+			<p>我</p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		<div id="box"></div>
+		<script>
+			//jquery选择器类似css表达式
+			//:即为过滤选择器
+			$(document).ready(function(){
+				//$('p:not(\'.a\')').css('background','red');
+				$('p:eq(2)').css('color','blue');//索引过滤选择器
+				$(':header').css('background','greenyellow');
+				$('#box').animate({'left':'1000'},1000);
+				$(':animated').css('background','green');
+				//gt()大于 lt()小于
+				//基本过滤选择器 
+				//:parent 含有子元素或文本元素都算 与之相对为:empty :first :last 选取第一个或最后一个元素
+				//内容过滤选择器
+				$('p:contains("我")').css('background','deeppink').siblings().css('background','springgreen');
+			});
+		</script>  
+	</body>
+</html>

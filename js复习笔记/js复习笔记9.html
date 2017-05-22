@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>清除浮动</title>
+		<style>
+			#box
+			{
+				border: 10px black solid;
+				width: 200px;
+				overflow: hidden;
+			}
+			.wrap
+			{
+				height: 200px;
+				width: 200px;
+				background: pink;
+				float: left;
+			}
+			#bb
+			{
+				height: 200px;
+				width: 200px;
+				background: deepskyblue;
+			}		
+		</style>
+	</head>
+	<body>
+		<div id="box">
+		    <div class="wrap"></div>
+		</div>
+		<div id="bb"></div>
+		<script>
+			/*
+			 清除浮动一共有三种方法
+			 1.给父级设置经过计算的高度值
+			 2.在需要解决的后面添加clear:both;...
+			 3.给父级设置overflow：hidden;
+			 */
+			//利用<br clear=all/>清除浮动,现在已经淘汰
+		</script>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>闭包最重要的运用</title>
+	</head>
+	<body>
+		<div>111</div>
+		<div>222</div>
+		<div>333</div>
+		<div>444</div>
+		<script>
+			var aDiv=document.getElementsByTagName('div');
+			/*
+			for(var i=0;i<aDiv.length;i++)
+			{
+				aDiv[i].x=i;//保存i,否则垃圾回收，就使i消失了
+				aDiv[i].onclick=function()
+				{
+					alert(this.x);
+				}
+			}
+			*/
+			/*
+			for(var i=0;i<aDiv.length;i++)
+			{
+				a(i);//实参i
+				function a(x)//行参x,为使参数永久保存
+				{
+					aDiv[x].onclick=function()
+					{
+						alert(x);
+					}
+				}
+			}
+			*/
+			for(var i=0;i<aDiv.length;i++)
+			{
+				(function(i){//避免使用变量,写的难看一点，此i非循环中唯一的i
+					aDiv[i].onclick=function()
+					{
+						alert(i);
+					}
+				}) (i);//立马执行  
+			}
+		</script>
+	</body>
+</html>

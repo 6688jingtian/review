@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.js"></script>
+		<style></style>
+	</head>
+	<body>
+		<form id="form1">
+			账号：<input type="text" name="username" /><br />
+			密码：<input type="text" name="password" /><br />
+			email：<input type="text" name="e-mail" /><br />
+			qq:<input type="text" name="qq" /><br />
+			ID:<input type="text" name="id" /><br />
+			<input type="button" value="提交" />
+		</form>
+		<script>
+			$('input[type=button]').click(function(){//通过序列化表单值，创建 URL 编码文本字符串
+				var data=$('#form1').serialize();
+				alert(data);
+				return false;
+				$.ajax({
+					type:"post",
+					url:"ex.php",
+					success:function(){},
+					async:true
+				});
+			})
+		</script>
+	</body>
+</html>

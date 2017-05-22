@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>隔行变色</title>
+		<script src="js/jquery-3.2.1.js"></script>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script>
+			$('#ul1 li').filter(':even').css('background','red').end().filter(':odd').css('background','green');
+		</script>
+	</body>
+</html>

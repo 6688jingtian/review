@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>可变参，不定参</title>
+	</head>
+	<body>
+		
+		<script>
+			function sum()
+			{
+				var result=0;
+				for(var i=0;i<arguments.length;i++)
+				{
+					result+=arguments[i];
+				}
+				return result;
+			}
+			alert(sum(12,5,8,10,12,5,8,10,12,5,8,12,5,8,12,5,8,12,5,8,12,5,8
+			,12,5,8,10,12,5,8,10,12,5,8,12,5,8,12,5,8,12,5,8,12,5,8));
+		</script>
+	</body>
+</html>

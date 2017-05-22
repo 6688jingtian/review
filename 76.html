@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery自定义动画（太重要了）</title>
+		<script src="js/jquery-3.2.1.js"></script>
+		<style>
+			*{margin: 0;padding: 0;}
+			#box
+			{
+				height: 100px;
+				width: 100px;
+				background: greenyellow;
+				animation: 1s;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script>
+			$('#box').animate({
+				'left':'1200px',
+				'opacity':0.3,
+				'top':'500px'
+				},1500,function(){
+					$(document).css('background','red');
+				});
+		</script>
+	</body>
+</html>

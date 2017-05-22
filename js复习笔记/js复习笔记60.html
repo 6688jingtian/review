@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js克隆与递归</title>
+	</head>
+	<body>
+		<script>
+			var a={
+				aa:10,
+				bb:5,
+				cc:1,
+				qqq:
+				{
+					a:'a',
+					b:'b',
+				}
+			};
+			var b=Clone(a);
+			b.qqq.c='c';
+			alert(a.qqq.c);
+			//alert(a.dd);
+			function Clone(obj) 
+			{
+				var newObj={};
+			    for(var key in obj)
+			    {
+			    	if(typeof obj[key]=='object')
+			    	{
+			    		newObj[key]=Clone(obj[key])
+			    	}
+			    	else
+			    	{
+			    	    newObj[key]=obj[key];
+			    	}
+			    }
+			    return newObj; 
+			}; 
+			  
+			//阶乘
+			/*
+			function factorial(num)
+			{
+				if(num==1)
+				{
+					return 1;
+				}
+				return num*factorial(num-1);
+			};
+			alert(factorial(5)); 
+			*/
+		</script>
+	</body>
+</html>

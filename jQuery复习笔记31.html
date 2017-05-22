@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>POST方法</title>
+		<script src="jquery.js"></script>
+	</head>
+	<body>
+		<input type="text" id="username" />
+		<input type="button" value="检验" />
+		<script>
+			$('input[type=button]').click(function(){
+				var url='wowo.php';
+				var data={'username':$('#username').val()};
+				$.post(url,data,function(data){
+					if(data=='true')
+					{
+						alert('可用作用户名');  
+					}
+					else
+					{
+						alert('不可用作用户名');
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

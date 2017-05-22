@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>淡入淡出</title>
+		<style>
+			*{margin: 0;padding: 0;}
+			#box
+			{
+				height: 200px;
+				width: 200px;
+				position: absolute;
+				background: greenyellow;
+				filter: alpha(opacity:50); opacity:0.5;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+		</div>
+		<script>
+			var oBox=document.getElementById('box');
+			var timer=null;
+			var alpha=50;
+			var speed=null;
+			oBox.onmouseover=function()
+			{
+				startMove(100);
+			};
+			oBox.onmouseout=function()
+			{
+				startMove(50);
+			};
+			function startMove(iTarget)
+			{
+				clearInterval(timer);
+                if(alpha>iTarget)
+                {
+                	speed=-10;
+                }
+                else
+                {
+                	speed=10;
+                }
+				timer=setInterval(function(){
+					alpha+=speed;
+					if(alpha==iTarget)
+					{
+						clearInterval(timer);
+					}
+					else
+					{
+						oBox.style.filter='alpha(opacity:'+alpha+')';//兼容ie
+					    oBox.style.opacity=(alpha/100);//兼容火狐和chrome
+					}
+				},30);
+			}
+		</script>
+	</body>
+</html>

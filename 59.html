@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" value="11111" id="txt1" />
+		<script src="js/jquery-3.2.1.js"></script>
+		<script>
+			var oTxt1=document.getElementById('txt1');
+			alert($(oTxt1).val());//DOM对象和jQuery对象互相转换
+			//alert($('#txt1')[0].value);
+			//alert($('#txt1').get(0).value);
+			//1.索引
+			//2.get(0)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#ul1{background: yellow;}
+			#ul2{background: green;}
+		</style>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li>2</li>
+			<li>1</li>
+			<li>4</li>
+			<li>3</li>
+		</ul>
+		<input type="button" id="btn1" value="移动" />
+		<ul id="ul2"></ul>
+		<script>
+			var oUl1=document.getElementById('ul1');
+			var oUl2=document.getElementById('ul2');
+			var oBtn1=document.getElementById('btn1');
+			var aLi=oUl1.getElementsByTagName('li');
+			oBtn1.onclick=function()
+			{  
+				var b=oUl1.children[0]; 
+			    oUl2.appendChild(b);
+			};
+		</script>
+	</body>
+</html>

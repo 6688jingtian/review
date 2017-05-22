@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件捕获</title>
+		<style>
+			#box
+			{
+				height: 100px;
+				width: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body> 
+		<input type="submit" id="box" />
+		<script>
+			window.onload=function()
+			{
+				var oDiv=document.getElementById('box');
+				oDiv.onclick=function()
+				{
+					alert('成了');
+				}; 
+				oDiv.setCapture(); //把网页所有事件都集中到这个东西身上，只在IE行，可以解决选中其它东西的方法
+			    oDiv.releaseCapture();
+			}
+		</script>
+	</body>
+</html>

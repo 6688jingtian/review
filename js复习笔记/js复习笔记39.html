@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>小说采集器</title>
+	</head>
+	<body>
+		<textarea id="text1" cols="40" rows="10"></textarea><br />
+		<input type="submit" value="采集" id="btn"/><br />
+		<textarea id="text2" cols="40" rows="10"></textarea>
+		<script>
+			var oText1=document.getElementById('text1');
+			var oText2=document.getElementById('text2');
+			var oBtn=document.getElementById('btn');
+			oBtn.onclick=function()
+			{
+				//[abc]pd中括号即元字符
+				var er=/<[^<>]+>/g;
+				oText2.value=oText1.value.replace(er,'');
+			};
+		</script>
+	</body>
+</html>

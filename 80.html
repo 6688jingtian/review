@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery页面搜索</title>
+		<script src="js/jquery.js"></script>
+		<style>
+			table
+			{
+				width: 300px;
+				height: 300px;
+				border: 1px solid black;
+				text-align: center;
+				margin: 80px auto; 
+			}
+			td
+			{
+				border: 1px solid black;
+			}
+			th
+			{
+				border: 1px solid black;
+			}
+			#box
+			{
+				height: 30px;
+				width: 190px;
+				margin: 30px auto;
+			}
+			#box .text
+			{
+				width: 110px;
+			}
+			#box .submit
+			{
+				width: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='box'>
+			<input type="text" class="text"/>
+		    <input type="submit" value="搜索" class="submit"/>
+		</div>
+		<table>
+			<tr>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>电话</th>
+			</tr>
+			<tr>
+				<td>中国移动</td>
+				<td>女</td>
+				<td>10086</td>
+			</tr>
+			<tr>
+				<td>赵四</td>
+				<td>男</td>
+				<td>13888888888</td>
+			</tr>
+			<tr>
+				<td>刘能</td>
+				<td>男</td>
+				<td>13666666666</td>
+			</tr>
+			<tr>
+				<td>中国联通</td>
+				<td>女</td>
+				<td>13333333333</td>
+			</tr>
+		</table>
+		<script>
+			$('input[type=submit]').click(function(){
+				var oText=$('input[type=text]').val();
+				$('table tr:not(":first")').hide().filter(':contains("'+oText+'")').show();
+			})
+		</script>
+	</body>
+</html>

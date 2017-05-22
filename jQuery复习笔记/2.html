@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>属性选择器</title>
+		<script src="js/jquery.js"></script>
+	</head>
+	<body>
+		<p ltitle="woha" title="haha">来吧来吧一起舞蹈</p>
+		<p >为什么</p>
+		<p>12</p>
+		<p>223</p>
+		<p>58</p>
+		<p>66</p>
+		<p>78</p>
+		<input type="text" disabled="disabled" value="hahah" />
+		<input type="text" value="woshizhoujielun" />
+		<script>
+			//可以自定义属性
+			$('p[ltitle=woha][title]').css('color','gold');
+			$('p:nth-child(odd)').css('background','red');
+			alert($('input[disabled=disabled]').val());
+		</script>
+	</body>
+</html>

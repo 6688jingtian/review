@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>仿微博发布框</title>
+		<script src="js/jquery-3.2.1.js"></script>
+		<style>
+		   strong
+		   {
+		   	color: red;
+		   }
+		</style>
+	</head>
+	<body>
+		<textarea cols="50" rows="20"></textarea><br />
+		<span>您还可以输入<strong>100</strong>个字</span>
+		<script>
+			var maxLength=100;
+			$('textarea').keyup(function(){
+				var l=$(this).val().length;
+				$('strong').text(maxLength-l);
+				if(parseInt(maxLength-l)<0)
+				{
+					$('strong').text(0);
+					var val=$(this).val().substring(0,140);//截取140个字
+					$(this).val(val);	
+				}
+			});
+		</script>
+	</body>
+</html>

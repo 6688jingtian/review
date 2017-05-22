@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery自定义动画</title>
+		<meta name="keywords" content="关键字" />
+		<meta name="description" content="描述" />
+		<script src="js/jquery-3.2.1.js"></script>
+		<style>
+			*{margin: 0;padding: 0;}
+			#box
+			{
+				height: 100px;
+				width: 100px;
+				background: greenyellow;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script>
+			$('#box').animate({
+				'left':'1000px',
+				'opacity':0.5,
+				'height':'200px'
+				},2000,function(){alert('完犊子了')});//callBack()回调函数
+		</script>
+	</body>
+</html>

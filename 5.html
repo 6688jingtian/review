@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>css函数</title>
+	</head>
+	<body>
+		<div id="div1" style="height: 200px; width: 200px; background: yellow;"></div>
+		<script>
+			function css(obj,name,value)
+			{
+				if(arguments.length==2)
+				{
+					return obj.style[name];
+				}
+				else
+				{
+					obj.style[name]=value;
+				}
+			};
+			var oDiv1=document.getElementById('div1');
+            alert(css(oDiv1,'height'));
+            css(oDiv1,'background','green');
+		</script>
+	</body>
+</html>

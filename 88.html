@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ajax较为复杂应用</title>
+		<script src="jquery.js"></script>
+	</head>
+	<body>
+		<input type="button" value="展示数据"/>
+		<div id="info">
+			<img src="ajax-loader.gif" id="loading" style="display: none;"/>
+			<ul></ul>
+		</div>
+		<script>
+			$('input').click(function(){
+				$.ajax({
+					url:"qi.php?"+Math.random(),
+					type:"get",
+					success:function(data){
+						var result=eval(data);
+						//console.log(result[0].title);
+						for(var i=0;i<result.length;i++)
+						{
+							//alert(result[i].title);
+							$('#info>ul').append('<li>'+result[i].title+' <em>'+result[i].time+'</em>'+'</li>');
+						}
+					}
+				});
+			})
+			$(document).ajaxStart(function(){
+				$('#loading').show();
+			}).ajaxStop(function(){
+				$('#loading').hide();
+			})
+		</script>
+	</body>
+</html>

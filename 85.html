@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ajax</title>
+		<script src="jquery.js"></script>
+		<style>
+			div{color:red;}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="username" id="username"/>
+		<input type="button" value="检查" />
+		<div></div>
+		<script>
+			$('input[type=button]').click(function(){
+				var url='proro.php';
+				var sendData={'username':$('#username').val()};
+				$.ajax({
+					url: url,
+					type:'post',
+					data: sendData,
+					success: function(data)
+					{
+						if(data=='true')
+						{
+							$('div').html('可作用户名');
+						}
+						else
+						{
+							$('div').html('admin不可作用户名');
+						}
+					}
+				})
+			});
+		</script>
+	</body>
+</html>

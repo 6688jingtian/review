@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>获取非行间样式</title>
+		<style>
+			div{height: 200px; width: 200px; background: red;}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<script>
+			var oDiv1=document.getElementById('div1');
+			alert(getComputedStyle(oDiv1,false).height);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>多关键词模糊搜索</title>
+		<style>
+			*{margin: 0;padding: 0;}
+			div
+			{
+				width: 209px;
+				margin: 20px auto;
+			}
+			table
+			{
+				text-align: center;
+				margin: 0 auto;
+			}
+			th
+			{
+				width: 100px;
+				line-height: 20px;
+				height: 20px;
+			}
+			td
+			{
+				width: 100px;
+				line-height: 20px;
+				height: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="text" id="txt1"/>
+			<input type="submit" value="搜索" id="sub"/>
+		</div>
+		<table border="1" id="tab1">
+			<thead>
+				<th>ID</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th></th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>赵四</td>
+					<td>22</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>刘能</td>
+					<td>27</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>刘英</td>
+					<td>55</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Blue</td>
+					<td>35</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>小六</td>
+					<td>33</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		<script>
+			var oTab1=document.getElementById('tab1');
+			var oSub=document.getElementById('sub');
+			var oTxt1=document.getElementById('txt1');
+			oSub.onclick=function()
+		    {
+		    	for(var i=0;i<oTab1.tBodies[0].rows.length;i++)
+		    	{
+		    		oTab1.tBodies[0].rows[i].style.background='';
+		    	}
+				for(var i=0;i<oTab1.tBodies[0].rows.length;i++)
+				{
+					var oTa=oTab1.tBodies[0].rows[i].cells[1].innerHTML;
+					var arr=oTxt1.value.toLowerCase().split(' ');
+					for(var j=0;j<arr.length;j++)
+					{
+						if(oTa.toLowerCase().search(arr[j])!=-1)
+						{
+							oTab1.tBodies[0].rows[i].style.background='yellow';
+						} 
+					}
+				}
+			};
+		</script>
+</body>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.2.1.js"></script>
+	</head>
+	<body>
+		<form>
+			<input type="text" value="111"/>
+			<input type="text" value="222"/>
+			<input type="text" value="333"/>
+		</form>
+		<p></p>
+		<script>
+			var arr=$('input').map(function(){//map作用是把数据引入到函数中
+				return $(this).val()
+			}).get().join(' ');
+			alert(typeof arr); 
+			$('p').html(arr);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery层次选择器</title>
+		<style>
+			*{margin: 0;padding: 0;}
+			#go
+			{
+				height: 50px;
+				width: 50px;
+				background: greenyellow;
+				display: block;
+				position: absolute;
+			}
+			p
+			{
+				height: 30px;
+				line-height: 30px;
+			}
+			#box
+			{
+				display: none;
+			}
+			#ha
+			{
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<p><span>这是</span>第一个<em>p标签</em></p>
+		<p>这是第二个p标签</p>
+		<div id="box">我是标签</div>
+		<div>我是可见标签</div>
+		<p>1</p>
+		<p class="a">2</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+		<p>周杰伦</p>
+		<p>李宇春</p>
+		<p>我是赵四</p>
+		<p></p>
+		<p>王俊凯</p>
+		<div id="ha">
+			<div id="go"></div>
+		</div>		
+		<div id="play"><p>来吧来吧一起舞蹈</p></div>
+		<script src="js/jquery-3.2.1.js"></script>
+		<script>
+			//$(function(){
+				//$('#div1+p').css('color','red');
+			//})
+			//$(function(){
+				//$('#div1~p').css('color','red');
+			//})
+			//$('p :first').css('background','red');//空格代表子孙元素
+			//$('p:not(\'.a\')').css('background','red');//转译符
+			//$('p:odd').css('background','red');
+			//$('p:eq(2)').css('background','red');//索引
+			//$('p:gt(2)').css('background','red');//索引大于
+			//$('p:lt(2)').css('background','red');//索引小于			
+			$('#go').animate({left:'1000px'},10000);
+			//$(':animated').css('background','red');
+			//$('p:has("em")').css('background','red');//has指元素，contains指文本
+			//$('p:contains("我是")').show().siblings().hide();
+			//show().siblings().hide()
+			//$('p:empty').css('background','red');
+			//$('p:parent').css('background','red');//含有子元素或文本
+			//alert($('div:hidden').html());
+			//alert($('div:visiable').html());
+			$('body p:first-child').css('background','red');
+			$('#play p:only-child').css('background','red');
+		</script>
+	</body>
+</html>

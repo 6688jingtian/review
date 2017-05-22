@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM遍历查找</title>
+		<script src="js/jquery-3.2.1.js"></script>
+	</head>
+	<body>
+		<p>我是周杰伦的师傅大佬<em>别秀了</em>体谅下</p>
+		<p id="ha">我是周杰伦的师傅大佬别秀了体谅下</p>
+		<p>我是周杰伦的师傅大佬别秀了</p>
+		<p>我是周杰伦的师傅</p>
+		<input name="haha[]" value="1" />
+		<input name="haha[]" value="2" />
+		<input name="haha[]" value="3" />
+		<input name="haha[]" value="4" />
+		<script>
+			//$('em').parent().css('background','greenyellow').end().css('background','blue');
+			//$('#ha').nextAll().addBack().css('background','blue');//还能返回自己
+			/*
+			$('input').each(function(){//遍历
+				alert($(this).val())
+			}) 
+			*/
+			$('input[name=haha\\[\\]]').click(function(){
+				alert($(this).val()); 
+			}) 
+		</script>
+	</body>
+</html>

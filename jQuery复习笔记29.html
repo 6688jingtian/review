@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>GET方法</title>
+		<script src="jquery-3.2.1.js"></script>
+		<style>
+			#box
+			{
+				height: 200px;
+				width: 200px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="加载" />
+		<div id="box"></div>
+		<script>
+			$('input[type=button]').click(function(){
+				$.get('my.html?date='+Math.random(),function(data){
+					//alert(data);//看着特别像乱码了
+					$('#box').html(data);
+				})
+			});
+		</script>
+	</body>
+</html>

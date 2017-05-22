@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//数组排序
+			//var a=['height','width','left','float'];
+			//a.sort();
+			//alert(a);
+			/*
+			function sort(n1,n2)
+			{
+				return n1-n2;
+			}
+			a=[10,1,23,54,42];
+			a.sort()
+			alert(a);
+			*/
+			//sort可以有参数
+			var a=[10,1,23,54,42];
+			a.sort(function(n1,n2){
+				return n1-n2;
+			});
+			alert(a);
+		</script>
+	</body>
+</html>

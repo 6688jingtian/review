@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>kldjfklsd<a href="javascript:;">隐藏</a></li>
+			<li>dfdf45<a href="javascript:;">隐藏</a></li>
+			<li>去哦呵呵呵<a href="javascript:;">隐藏</a></li>
+			<li>哈哈哈<a href="javascript:;">隐藏</a></li>
+			<li>皮皮虾<a href="javascript:;">隐藏</a></li>
+			<li>4545<a href="javascript:;">隐藏</a></li>
+			<li>lala<a href="javascript:;">隐藏</a></li>
+		</ul>
+		<script>
+			var aA=document.getElementsByTagName('a');
+			for(var i=0;i<aA.length;i++)
+			{
+				aA[i].onclick=function()
+				{
+					this.parentNode.style.display='none';
+				}
+			}
+		</script>
+	</body>
+</html>

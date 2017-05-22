@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ajax</title>
+		<script src="jquery-3.2.1.js"></script>
+		<style>
+			input
+			{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="读取数据" />
+		<textarea cols="50" rows="20" id="main"></textarea>
+		<script>
+			$('input[type=button]').click(function(){
+				$('#main').load('showMe.html');
+			});
+		</script>
+	</body>
+</html>

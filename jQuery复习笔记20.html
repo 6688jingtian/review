@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery基础动画与渐变及滑动动画</title>
+	    <script src="js/jquery-3.2.1.js"></script>
+	    <style>
+	    	p
+	    	{
+	    		display: none;
+	    	}
+	    </style>
+	</head>
+	<body>
+		<a href="javascript:;">点击</a>
+		<input type="button" value="点击" />
+		<p>亚洲舞王赵四约炮女学生不给钱</p>
+		<script>
+			$('a').click(function(){
+		  	$('p').fadeToggle(500);
+		  })  
+			//基础动画show(),hide(),toggle()
+			/*
+		   $('input').click(function(){
+		      $('p').toggle(500);	  
+		   })
+		   */
+		  //等价于toggle
+		  /*
+		  $('input').click(function(){
+		  	if($('p').is(':visible'))
+			  {
+			  	$('p').hide(500);
+			  }
+			  else
+			  {
+			  	$('p').show(500);
+			  }
+		  })
+		  */
+		 /*
+		  $('input').click(function(){
+			  $('p').fadeTo(1000,0.5,function(){
+			  	alert('完成');
+			  })});
+			  */ 
+			
+		   //is()也与过滤选择器搭配
+		   //渐变动画
+		   //fadeIn() fadeOut() fadeToggle()
+		   //滑动动画slideUp() slideDown() slideToggle()
+		</script>
+	</body>
+</html>

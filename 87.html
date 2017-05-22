@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.js"></script>
+	</head>
+	<body>
+		<input type="button" value="显示数据" id="but"/>
+		<div id="pro"></div>
+		<script>
+			$('#but').click(function(){
+				$.ajax({
+					type:"get",
+					url:"de.php",
+					success:function(data){
+						$('#pro').html(eval(data)[0].title);
+					}
+				});
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.js"></script>
+		<style>
+			body
+			{
+				height: 2000px;
+			}
+			input
+			{
+				position: fixed;
+                left: 0;
+                top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="点击获取scrollTop"/>
+		<script>
+			$('input').click(function()
+			{
+				alert($(window).scrollTop());
+			});
+			//html()获取dom节点和文本节点，text()获取文本节点
+		</script>
+	</body>
+</html>

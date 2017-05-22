@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			#box
+			{
+				height: 200px;
+				width: 200px;
+				position: absolute;
+				left: -200px;
+				background: greenyellow;
+			}
+			span
+			{
+				position: absolute;
+				background: blue;
+				left: 200px;
+				top: 70px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span>分享到</span>
+		</div>
+		<script>
+			var oBox=document.getElementById('box');
+			var oSpan=document.getElementsByTagName('span')[0];
+			var speed=10;
+			var timer=null;
+			oBox.onmouseout=function()
+			{
+				clearInterval(timer);
+					timer=setInterval(function(){
+					   if(oBox.offsetLeft==-200)
+					   {
+					   	  clearInterval(timer);
+					   }
+					   else
+					   {
+					   	  oBox.style.left=oBox.offsetLeft-speed+'px';
+					   }
+					},30);
+			};
+			oBox.onmouseover=function()
+			{
+				    clearInterval(timer);
+					timer=setInterval(function(){
+					   if(oBox.offsetLeft==0)
+					   {
+					   	  clearInterval(timer);
+					   }
+					   else
+					   {
+					   	  oBox.style.left=oBox.offsetLeft+speed+'px';
+					   }
+					},30);
+			};
+		</script>
+	</body>
+</html>

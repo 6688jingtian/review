@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body
+			{
+				height: 2000px;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			alert(window.navigator.userAgent);
+			alert(window.location);
+			window.onscroll=window.onresize=function()
+			{
+				alert('西瓜');
+			};
+			//三个系统对话框
+			//警告框,无返回值
+			//选择框,返回值为boolean
+			confirm('你确定吗？');
+			//输入框,返回字符串或null
+			prompt('是吗？');
+		</script>
+	</body>
+</html>

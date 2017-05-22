@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>闭包特性(垃圾回收机制)</title>
+	</head>
+	<body>
+		<script>
+			//垃圾回收机制，x用完一次就消失，释放内存空间
+			a();
+			a();
+			function a()
+			{
+				var x=5;
+				x=x+2;
+				alert(x);
+			} 
+			//闭包特性：
+			//1.垃圾回收机制(一直存在于内存中，不被回收)
+			//2.外部不影响内部，内部也不影响内部
+			//访问闭包内部的方法就是把闭包内部的函数赋给一个变量，再在外部对其进行调用
+		</script>
+	</body>
+</html>

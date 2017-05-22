@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>运动基础</title>
+		<style>
+			*{margin: 0;padding: 0;}
+			#box
+			{
+				height: 200px;
+				width: 200px;
+				background: yellow;
+				position: absolute;
+				left: 0;
+			}
+			#pie
+			{
+				width: 1px;
+				height: 100px;
+				background: black;
+				position: absolute;
+                left: 800px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="submit" value="走起" id="btn"/>
+		<div id="box">
+		</div>
+		<div id="pie"></div>
+	   <script>
+	   	   var oDiv=document.getElementById('box');
+	   	   var oBtn=document.getElementById('btn');
+	   	   var timer=null;
+	   	   var des=800;
+	   	   oBtn.onclick=function()
+	   	   {
+	   	   	    clearInterval(timer);
+	   	        timer=setInterval(function()
+	   	        {
+	   	        	var speed=(des-oDiv.offsetLeft)/5;
+	   	        	speed=speed>0?Math.ceil(speed):Math.floor(speed);//速度取整重要
+		   	       	if(oDiv.offsetLeft==des)
+		   	       	{
+		   	       		oDiv.offsetLeft=800;
+		   	       		clearInterval(timer);
+		   	       	}
+		   	       	else
+		   	       	{
+		   	       		oDiv.style.left=oDiv.offsetLeft+speed+'px';
+		   	       	}
+	   	        },30);
+	   	   }
+	   </script>
+	</body>
+</html>

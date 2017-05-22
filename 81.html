@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>仿微博发布框</title>
+		<script src="js/jquery.js"></script>
+		<style>
+			#box
+			{
+				height: 200px;
+				width: 374px;
+				margin: 80px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<textarea cols="50" rows="10"></textarea>
+		    <p>还可以输入<strong style="color: red;">140</strong>个字</p>
+		</div>
+		<script>
+			var maxLength=140;
+			$('textarea').keyup(function(){
+				var l=$(this).val().length; 
+				$('strong').text(maxLength-l);
+				/*
+			    if(l>maxLength)//方法2
+			    {
+			    	var sub=$(this).val().substring(0,140);
+			    	$(this).val(sub);
+			    	l=maxLength;
+			    	alert('您输入字数已达到上限');
+			    }
+			    */
+			    if(parseInt($('strong').text())<0)
+			    {
+			    	$('strong').text('0');
+			    	var sub=$(this).val().substring(0,140);//截取下标之间的字符串
+			    	$(this).val(sub);
+			    	alert('您输入字数已达到上限');
+			    }
+			});	
+		</script>
+	</body>
+</html>

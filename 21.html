@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>实现隐藏</title>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li>刘能<a href="#">删除</a></li>
+			<li>赵四<a href="#">删除</a></li>
+			<li>玉田<a href="#">删除</a></li>
+			<li>谢广坤<a href="#">删除</a></li>
+			<li>香秀<a href="#">删除</a></li>
+		</ul>
+		<script>
+			var aA=document.getElementsByTagName('a');
+			var oUl1=document.getElementById('ul1');
+			var aLi=document.getElementsByTagName('li');
+			for(var i=0;i<aA.length;i++)
+			{
+				aA[i].onclick=function()
+				{
+				    oUl1.removeChild(this.parentNode);		
+				}
+			}
+		</script>
+	</body>
+</html>

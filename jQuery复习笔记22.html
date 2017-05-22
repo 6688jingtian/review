@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.2.1.js"></script>
+		<style>
+			*{margin: 0;padding: 0;}
+			#box
+			{
+				height: 100px;
+				width: 100px;
+				background: greenyellow;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<p>我是周杰伦</p>
+		<div id="box"></div>
+		<script>
+			$('p').hover(function(){
+				$('#box').stop(false,true).slideDown(500);
+			},function(){
+				$('#box').stop(false,true).slideUp(500).delay(1000).fadeIn(1000);
+			})
+		</script>
+	</body>
+</html>

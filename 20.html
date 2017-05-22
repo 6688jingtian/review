@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动态轮播图</title>
+	</head>
+	<body>
+		<img src="img/1.jpg">
+		<script>
+		window.onload=function()
+		{
+			setInterval("fort()",1000);//单位为毫秒，1秒，定时调用函数
+		};
+		var img=new Array(6);//创建数组,new可省略
+		var nums=1;
+	    for(i=1;i<=6;i++)//实例化对象，方可引用
+	    {
+		   img[i]=new Image();//创建对象实例
+		   img[i].src="img/"+i+".jpg"//设置所有图片的路径及名称，就是字符串加字符串
+	    }
+		function fort()//定义图片切换函数
+		{
+			nums++;
+			document.images[0].src=img[nums].src;
+			if(nums==6)
+			nums=0;
+		}
+		</script>
+	</body>
+</html>

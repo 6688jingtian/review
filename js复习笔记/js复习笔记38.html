@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>敏感词过滤</title>
+	</head>
+	<body>
+		<textarea id="text1" cols="40" rows="10"></textarea><br />
+		<input type="submit" value="提交" id="btn"/><br />
+		<textarea id="text2" cols="40" rows="10"></textarea>
+		<script>
+			var oText1=document.getElementById('text1');
+			var oText2=document.getElementById('text2');
+			var oBtn=document.getElementById('btn');
+			oBtn.onclick=function()
+			{
+				var er=/北京|百度|淘宝/g;
+				oText2.value=oText1.value.replace(er,'******');
+			};
+		</script>
+	</body>
+</html>

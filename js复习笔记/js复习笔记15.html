@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM操作应用</title>
+	</head>
+	<body>
+		<input type="text" id="txt1"/>
+		<input type="submit" id="sub" value="提交"/><br />
+		<ul id="ul1">
+		</ul>
+		<script>
+			var oTxt1=document.getElementById('txt1');
+			var oSub=document.getElementById('sub');
+			var oUl1=document.getElementById('ul1');
+			oSub.onclick=function()
+			{
+				var oLi=document.createElement('li');
+				oLi.innerHTML=oTxt1.value;
+				var aLi=document.getElementsByTagName('li');
+				if(aLi.length>0)
+				{
+					oUl1.insertBefore(oLi,oUl1.firstElementChild);
+				}
+				else
+				{
+					oUl1.appendChild(oLi);
+				}
+			};
+		</script>
+	</body>
+</html>

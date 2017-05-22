@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.js"></script>
+	</head>
+	<body>
+		<p>我是第1个</p>
+		<p>我是第2个</p>
+		<p>我是第3个</p>
+		<p class="a">我是第4个</p>
+		<p>我是第5个</p>
+		<h1>1</h1>
+		<h2>2</h2>
+		<h3>3</h3>
+		<h4>4</h4>
+		<h5>5</h5>
+		<script>
+			//基本过滤选择器
+			//$('p:not(\'.a\')').css('background','red');
+			$('p:even').css('background','yellow');
+			//$('p').eq(2).hide();
+			$('p:gt(2)').hide();
+			$(':header').hide();//针对h标签
+		</script>
+	</body>
+</html>

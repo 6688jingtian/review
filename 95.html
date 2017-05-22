@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>隔行变色  </title>
+		<script src="js/jquery.js"></script>
+		<script src="jquery.table.1.0.js"></script>
+		<style>
+			table
+			{
+				margin: 100px auto;
+				border: 1px solid black;
+				text-align: center;
+				width: 500px;
+				border-collapse:collapse;
+			}
+			td,th{border: 1px solid black;line-height: 30px; }
+			.evenRow1{background: greenyellow;}
+			.oddRow1{background: blueviolet;}
+			.currentRow1{background: yellow;}
+		</style>
+	</head>
+	<body>
+		<table id="tab1">
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>工资</th>
+			</tr>
+			<tr>
+				<td>赵四</td>
+				<td>25</td>
+				<td>女</td>
+				<td>18000</td>
+			</tr>
+			<tr>
+				<td>谢大脚</td>
+				<td>22</td>
+				<td>男</td>
+				<td>20000</td>
+			</tr>
+			<tr>
+				<td>刘英</td>
+				<td>27</td>
+				<td>女</td>
+				<td>50000</td>
+			</tr>
+			<tr>
+				<td>谢腾飞</td>
+				<td>27</td>
+				<td>男</td>
+				<td>12000</td>
+			</tr>
+			<tr>
+				<td>刘大脑袋</td>
+				<td>23</td>
+				<td>男</td>
+				<td>20000</td>
+			</tr>
+		</table>
+		<script>
+			$('#tab1').table(
+				{
+					 evenRowClass:'evenRow1',
+		   			 oddRowClass:'oddRow1',
+		   			 currentRowClass:'currentRow1',
+		   			 eventType0:'click'
+				}	 
+			);
+		</script>
+	</body>
+</html>

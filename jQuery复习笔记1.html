@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery对象和DOM对象</title>
+		<script src="js/prototype.js"></script>
+		<script src="js/jquery.js"></script>
+		<style>
+		</style>
+	</head>
+	<body>
+		<input type="button" value="111111"  id="btn1"/>
+		<script>
+			//length,toString方法为DOM和jQuery两种都有的
+			//alert($('input').get(0).value);//jquery转换成DOM对象两种转换方法：1.index 2.get()方法
+			//var ipt=document.getElementById('btn1');
+			//alert($(ipt).val());//DOM对象转换为jQuery对象的方法即为在外面加上$
+			jQuery.noConflict();//使jQuery与其他插件共存,释放$权限
+			alert('这是：'+jQuery('#btn1').val());
+			alert('这是：'+$F('btn1'));
+			//$F()是一个能够简化编码量的函数， 对于字符输入控件有效，包括input、textarea、
+			//select等，该函数的输入参数为这些输入控件元素对象的id或元素对象本身，函数负责返回这些
+			//输入控件元素对象的值，即value。
+		</script>
+	</body>
+</html>

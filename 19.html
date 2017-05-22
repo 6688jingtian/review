@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="txt1" />
+		<input type="button" id="btn1" value="创建"/><br />
+		<ul id="ul1"></ul>
+		<script>
+			var oBtn1=document.getElementById('btn1');
+			var oTxt1=document.getElementById('txt1');
+			var oUl1=document.getElementById('ul1');
+			oBtn1.onclick=function()
+			{
+				var oLi=document.createElement('li');
+				var aLi=document.getElementsByTagName('li');
+				if(aLi.length>0)//兼容IE
+				{
+					oUl1.insertBefore(oLi,aLi[0]);
+				}
+			    else
+			    {
+			    	oUl1.insertBefore(oLi);
+			    }
+			    oLi.innerHTML=oTxt1.value;
+			}
+		</script>
+	</body>
+</html>

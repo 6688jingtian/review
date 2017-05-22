@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>运动队列</title>
+		<script src="js/jquery-3.2.1.js"></script>
+		<style>
+			*{margin: 0;padding: 0;}
+			#top
+			{
+				position: relative;
+			}
+			#box
+			{
+				height: 100px;
+				width: 100px;
+				background: greenyellow;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<input type="button" value="开始" id="开始"/>
+			<input type="button" value="stop" id="stop"/>
+			<input type="button" value="dequeue" id="dequeue"/>
+			<input type="button" value="finish" id="finsh"/>
+		</div>
+		<div id="box"></div>
+		<script>
+			$('#开始').click(function(){
+				$('#box').animate({'left':'500px'},2000).animate({'top':'500px'},2000)
+				.animate({'left':0},2000).animate({'top':'22px'},2000);
+			})
+			$('#stop').click(function(){
+				$('#box').stop();
+			})
+			$('#dequeue').click(function(){
+				$('#box').dequeue();
+			})
+			$('#finsh').click(function(){
+				$('#box').finish();
+			})
+		</script>
+	</body>
+</html>

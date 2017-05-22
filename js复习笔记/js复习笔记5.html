@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0; padding: 0;}
+			#box
+			{
+				background: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" style="height: 200px; width: 200px;"></div>
+		<script>
+			//非行间样式需要特定函数
+			var oDiv=document.getElementById('box');
+			function getStyle(obj,name)//获取非行间样式，无法获取复合样式，类似background，border
+			{
+				if(obj.currentStyle)
+				{
+					return obj.currentStyle[name];
+				}
+				else
+				{
+					return getComputedStyle(obj,false)[name];
+				}
+			}
+			/*
+			function css(obj,name,value)
+			{
+				if(arguments.length==2)
+				{
+					return obj.style[name];
+				}
+				else
+				if(arguments.length==3)
+				{
+				    obj.style[name]=value;
+				}
+			};
+			*/
+			alert(getStyle(oDiv,'height'));
+			//css(oDiv,'background','green');
+		</script>
+	</body> 
+</html>

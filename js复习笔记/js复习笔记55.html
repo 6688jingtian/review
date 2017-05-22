@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>包装对象</title>
+	</head>
+	<body>
+		<script>
+			//对于非对象的数据类型，是由包装对象产生的
+			//数组
+			//包装对象用完立即销毁
+			var arr=[1,2,3]; 
+			var list='abcd';
+			//String.prototype 由它产生包装对象，用完一次立即销毁，每调用一次都会产生一个包装对象
+			list.a=10;
+			Array.prototype.push=function()
+			{
+				var arg=arguments;
+				for(var i=0;i<arg.length;i++)
+				{
+					this[this.length]=arg[i];
+				}
+			};
+			arr.push(4);
+			alert(arr);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>hahaha</title>
+		<script src='../js/prototype.js'></script>
+		<script src="../js/jquery.js"></script>
+		<style>
+			*{margin: 0; padding: 0;}
+			.box 
+			{
+				height: 200px;
+				width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div><br />
+		<input type="submit" id="btn" value="点我"></input>
+		<p>张学友</p>
+		<p><strong>周杰伦</strong></p>
+		<p>薛之谦</p>
+		<p>123</p>
+		<p>234</p>
+		<p>555</p>
+		<input type="text" id="txt1" value="ha"/>
+		<input type="checkbox" checked="checked" />
+		<select>
+			<option>111</option>
+			<option>222</option>
+			<option>333</option>
+		</select>
+		<script>
+			$('.box').css('background','greenyellow');
+			$('#btn').click(function(){
+				alert($(this).val());
+			}); 
+			//$('div').nextAll().css('background','yellow');
+			$('select').hide();
+			$('p').filter(':even').css('background','pink').end().filter(':odd').css('background','gray');
+			console.log($(this));
+			$('p').css({
+				'padding':'10px',
+				'margin':'10px',
+				'border':'1px solid black'
+			});
+			//jQuery对象转换成DOM对象
+			//1.使用索引 index
+			//2.使用get(index)
+			//DOM转换jQuery对象加$就可
+			
+			var input=$('#txt1');
+			var oTxt1=document.getElementById('txt1');
+			alert($(oTxt1).length);
+			//alert(input[0].value);
+			//alert(input.get(0).value);
+			//alert(input.val());
+			
+			//库共存
+			jQuery.noConflict();//解除jQuery对$的控制权
+			alert($F('txt1'));//原型用法
+			alert('这是jQuery弹出的'+jQuery('#txt1').val());//jQuery用需要单独声明
+			
+		</script>
+	</body>
+</html>

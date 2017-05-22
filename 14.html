@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>节点操作</title>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script>
+			var oUl1=document.getElementById('ul1');
+			for(var i=0;i<oUl1.children.length;i++)
+			{
+				oUl1.children[i].style.background='red';
+		    }
+			/*
+			var oUl1=document.getElementById('ul1');
+			for(var i=0;i<oUl1.childNodes.length;i++)
+			{
+				if(oUl1.childNodes[i].nodeType==1)
+		        {
+				oUl1.childNodes[i].style.background='red';
+			    }
+		    }
+		    */
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>原型</title>
+	</head>
+	<body>
+		<script>
+		    /*
+		     protype原型，为相同的节省空间
+		            只有构造函数有原型
+		            在写面向对象的时候：
+		           1. 私有属性写在里
+		           2.共有属性写在原型里
+		            原型方法中的this指向的是执行时候的对象
+		    */
+		    function Person(name)
+			{
+				this.name=name;
+			};
+			Person.prototype.fn=function()
+			{
+				alert(this.name);
+			};
+			var obj1=new Person('blue');
+			var obj2=new Person('yellow');
+			
+			obj1.fn(); 
+		</script>
+	</body>
+</html>

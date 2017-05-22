@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>原型链</title>
+	</head>
+	<body>
+		<script>
+			//对象和它的构造函数叫做原型链
+			//一直向上找直到找到最顶端，实在没有(1 2同时屏蔽)就undefined
+			function Num(nn)
+			{
+			   this.number=nn;//1
+			}
+			Num.prototype.number=10;//2
+			var n=new Num(5);
+			alert(n.number);
+			alert(n.constructor);//输出构造函数
+		</script>
+	</body>
+</html>

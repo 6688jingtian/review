@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>焦点事件</title>
+		<script src="js/jquery-3.2.1.js"></script>
+		<style>
+			span
+			{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="text" id="txt1" value="123465" />
+		    <p><a><input type="text" id="txt2" value="23333"/></a></p>
+		    <input value="这条路我们走的太匆忙，拥抱着并不真实的欲望"></input>
+		    <span>加油啊！</span>
+		    <input type="button" value="按钮" />
+		</div>
+		<script>
+			$('div').focusin(function(){//获取焦点事件,jquery适合链式操作
+				$(this).children('span').show();
+			});
+			$('p a input').focusin(function(){//获取焦点事件
+				$('span').show();
+			});
+		</script>
+	</body>
+</html>

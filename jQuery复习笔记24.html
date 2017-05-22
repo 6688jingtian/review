@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表单选择框实例(全选 全不选 反选)</title>
+		<script src="js/jquery.js"></script>
+	</head>
+	<body>
+		<div id="box1">
+			吃:<input type="checkbox"  value="吃" checked="checked"/>
+			喝:<input type="checkbox"  value="喝"/>
+			玩:<input type="checkbox"  value="玩"/>
+			乐:<input type="checkbox"  value="乐"/>
+		</div>
+		<div id="box2">
+			<input type="button"  value="全选" id="checkedAll"/>
+			<input type="button"  value="全不选" id="checkedNone"/>
+			<input type="button"  value="反选" id="checkReverse"/>
+		</div>
+		<script>
+			//版本不一样，bug不同
+			var all=$('#checkedAll');
+			var none=$('#checkedNone');
+			var reverse=$('#checkReverse');
+			var checked=$('#box1>input');//type也可以用代替input
+            //alert(checked.length);
+            all.click(function(){
+            	checked.attr('checked',true);
+            })
+            none.click(function(){
+            	checked.removeAttr('checked',false);
+            })
+            reverse.click(function(){
+            	//checked.attr('checked',!$().attr('checked'));
+            	checked.each(function(){//each忘记了
+            		$(this).attr('checked',!$(this).attr('checked'));
+            	})
+            })
+		</script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			#box
+			{
+				height: 200px;
+				width: 200px;
+				background: #ccc;
+			    margin: 100px;
+			    position: relative;
+			}
+			#haha
+			{
+				height: 100px;
+				width: 100px;
+				background: red;
+				position: absolute;
+				left: 50px;
+				top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="haha"></div>
+		</div>
+		<script>
+			//offsetParent确定的是其用来定位的父元素
+			var oBox=document.getElementById('haha');
+			alert(oBox.offsetParent);
+		</script>
+	</body>
+</html>

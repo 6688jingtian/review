@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格搜索</title>
+	</head>
+	<body>
+		<input type="text" id="txt1" />
+		<input type="button" id="btn1" value="搜索"/>
+		<table id="tab1" width="600px" border="1px">
+			<thead>
+				<td>ID</td>
+				<td>姓名</td>
+				<td>年龄</td>
+				<td>操作</td>
+			</thead>
+			<tbody>
+				<tr>
+					<td>0</td>
+					<td>刘英</td>
+					<td>27</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>赵四</td>
+					<td>35</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>刘能</td>
+					<td>55</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>谢大脚</td>
+					<td>22</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>刘一水</td>
+					<td>39</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>jingtian</td>
+					<td>23</td>
+					<td></td>
+				</tr>
+			</tbody>
+			</table>
+			<script>
+				var oTab1=document.getElementById('tab1');
+				var oBtn1=document.getElementById('btn1');
+				var oTxt1=document.getElementById('txt1');
+				var oRows=oTab1.tBodies[0].rows;
+				oBtn1.onclick=function()
+				{
+					for(var i=0;i<oTab1.tBodies[0].rows.length;i++)
+					{
+						var arr=[];
+						var n1=oRows[i].cells[1].innerHTML.toLowerCase();
+						var n2=oTxt1.value.toLowerCase();
+						arr=n2.split(' ');
+						oRows[i].style.background='';
+						for(var j=0;j<arr.length;j++)
+						{
+							
+							if(n1.search(arr[j])!=-1)//忽略大小写
+							{
+								oRows[i].style.background='yellow';
+							}
+								
+						}
+						
+					}
+				};
+			</script>
+	</body>
+</html>

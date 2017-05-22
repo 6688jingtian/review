@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>滚动公告</title>
+		<style>
+			#box
+			{
+				height: 420px;
+				width: 250px;
+				border: 1px solid black;
+				overflow: hidden;
+				margin: 50px auto;
+			}
+			#box ul
+			{
+				position: relative;
+			}
+			#box ul li
+			{
+				list-style: none;
+				height: 50px;
+				line-height: 50px;
+				animation: 1s;
+			}
+		</style>
+		<script src="js/jquery-3.2.1.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>我是第一条公告。。。</li>
+				<li>我是第二条公告。。。</li>
+				<li>我是第三条公告。。。</li>
+				<li>我是第四条公告。。。</li>
+				<li>我是第五条公告。。。</li>
+				<li>我是第六条公告。。。</li>
+				<li>我是第七条公告。。。</li>
+				<li>我是第八条公告。。。</li>
+				<li>我是第九条公告。。。</li>
+				<li>我是第十条公告。。。</li>
+		    </ul>
+		</div>
+		<script>
+			setInterval(function(){
+				//$('#box ul').children().first().insertAfter($('#box ul').children().last());
+				$('#box ul').animate({'top':'-50px'},600,function(){
+					$(this).append($('#box ul').children().first());
+					$(this).css('top','0px');
+				});
+			},1500);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件对象和事件冒泡</title>
+		<style>
+			#box
+			{
+				height: 200px;
+				width: 200px;
+				background: #ccc;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="submit" value="显示" />
+		<div id="box"></div>
+		<script>
+			var oDiv=document.getElementById('box');
+			var oIn=document.getElementsByTagName('input')[0];
+			oIn.onclick=function(ev)
+			{
+				var oEvent=ev||event;
+				oDiv.style.display='block';
+				oEvent.cancelBubble=true;
+			}
+		    document.onclick=function()
+		    {
+		    	oDiv.style.display='none';
+		    }
+			//事件对象，event对象
+			//alert(document.children[0].tagName);
+		</script>
+	</body>
+</html>

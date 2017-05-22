@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="确定" id="btn1" />
+		<script>
+			function getClass(obj,strr,fun)
+			{
+				if(obj.attachEvent)
+				{
+				  obj.attachEvent('on'+strr,fun);	
+				}
+				else
+				{
+				  obj.addEventListener(strr,fun,false);
+				}
+			};
+			var oBtn1=document.getElementById('btn1');//在同一事物上添加多个事件
+			getClass(oBtn1,'click',function(){
+			alert('a');
+			});
+			getClass(oBtn1,'click',function(){
+				alert('b');
+			});
+		</script>
+	</body>
+</html>
